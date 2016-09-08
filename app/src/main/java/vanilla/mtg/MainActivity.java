@@ -78,7 +78,7 @@ public class MainActivity extends Activity
                 Player p1 = new Player(players.get(0), self);
                 p1.setLand(Player.Land.Plains);
                 Player p2 = new Player(players.get(1), self);
-                p2.setLand(Player.Land.Forest);
+                p2.setLand(Player.Land.Island);
             }
 		});
 	}
