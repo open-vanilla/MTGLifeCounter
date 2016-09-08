@@ -1,6 +1,7 @@
 package vanilla.mtg;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import vanilla.mtg.models.Player;
+
 public class MainActivity extends Activity
 {
 
@@ -22,6 +25,8 @@ public class MainActivity extends Activity
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_main);
+
+		final Context self = this;
 
 		runOnUiThread(new Runnable()
 		{
@@ -69,7 +74,12 @@ public class MainActivity extends Activity
 
 					lifeDec.setOnClickListener(new LifeChangeListener(lifeCounter, -1));
 				}
-			}
+
+                Player p1 = new Player(players.get(0), self);
+                p1.setLand(Player.Land.Plains);
+                Player p2 = new Player(players.get(1), self);
+                p2.setLand(Player.Land.Forest);
+            }
 		});
 	}
 

@@ -1,33 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="horizontal"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:tag="@string/player_tag"
-              android:weightSum="10">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag="@string/player_tag"
+    android:layout_weight="6.75"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:background="@drawable/irongrip_repeating">
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
+        android:layout_width="@dimen/medium_diameter"
+        android:layout_height="@dimen/medium_diameter"
+        android:width="@dimen/medium_diameter"
+        android:height="@dimen/medium_diameter"
+        android:background="@drawable/round_button"
         android:id="@+id/lifeDec"
+        android:gravity="center"
         android:layout_gravity="left|center_vertical"
-        android:layout_weight="1"/>
+        android:text="\u2212"
+        android:textAlignment="gravity"
+        android:textSize="50sp"
+        android:includeFontPadding="false"
+        />
 
     <TextView
-            android:layout_width="14dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/lifeCounter"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_weight="8"
-            android:textSize="130dp"/>
+        android:layout_width="227dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/lifeCounter"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="8"
+        android:textSize="130sp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
+        android:layout_width="@dimen/medium_diameter"
+        android:layout_height="@dimen/medium_diameter"
+        android:width="@dimen/medium_diameter"
+        android:height="@dimen/medium_diameter"
+        android:background="@drawable/round_button"
         android:id="@+id/lifeInc"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"/>
-</LinearLayout>
+        android:gravity="center"
+        android:layout_gravity="right|center_vertical"
+        android:text="\u002B"
+        android:textAlignment="gravity"
+        android:textSize="50sp"
+        android:includeFontPadding="false"/>
+
+
+</FrameLayout>

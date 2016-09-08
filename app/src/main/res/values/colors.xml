@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="swamp">#333333</color>
+    <color name="island">#77bae2</color>
+    <color name="plains">#eeeeee</color>
+    <color name="mountain">#c36965</color>
+    <color name="forest">#2f5d13</color>
+    <color name="light_controls">#eeeeee</color>
+    <color name="dark_controls">#333333</color>
+</resources>
