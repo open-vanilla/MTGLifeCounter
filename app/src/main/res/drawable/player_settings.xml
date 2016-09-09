@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:left="22dp" android:top="0dp" android:right="22dp" android:bottom="45dp"
+          android:id="@+id/topMid">
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+            <solid
+                android:color="#eeeeee"/>
+            <size
+                android:width="@dimen/small_diameter"
+                android:height="@dimen/small_diameter"/>
+        </shape>
+    </item>
+    <item  android:left="0dp" android:top="18dp" android:right="44dp" android:bottom="27dp"
+           android:id="@+id/midLeft">
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+            <solid
+                android:color="#eeeeee"/>
+            <size
+                android:width="@dimen/small_diameter"
+                android:height="@dimen/small_diameter"/>
+        </shape>
+    </item>
+    <item  android:left="44dp" android:top="18dp" android:right="0dp" android:bottom="27dp"
+           android:id="@+id/midRight">
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+            <solid
+                android:color="#eeeeee"/>
+            <size
+                android:width="@dimen/small_diameter"
+                android:height="@dimen/small_diameter"/>
+        </shape>
+    </item>
+    <item  android:left="34dp" android:top="45dp" android:right="10dp" android:bottom="0dp"
+           android:id="@+id/botRight">
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+            <solid
+                android:color="#eeeeee"/>
+            <size
+                android:width="@dimen/small_diameter"
+                android:height="@dimen/small_diameter"/>
+        </shape>
+    </item>
+    <item  android:left="10dp" android:top="45dp" android:right="34dp" android:bottom="0dp"
+           android:id="@+id/botLeft">
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+
+            <solid
+                android:color="#eeeeee"/>
+            <size
+                android:width="@dimen/small_diameter"
+                android:height="@dimen/small_diameter"/>
+        </shape>
+    </item>
+</layer-list>

@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="medium_radius">30dp</dimen>
     <dimen name="medium_diameter">60dp</dimen>
+    <dimen name="small_diameter">16dp</dimen>
 </resources>

@@ -76,9 +76,9 @@ public class MainActivity extends Activity
 				}
 
                 Player p1 = new Player(players.get(0), self);
-                p1.setLand(Player.Land.Plains);
+                p1.setLand(Player.Land.Mountain);
                 Player p2 = new Player(players.get(1), self);
-                p2.setLand(Player.Land.Island);
+                p2.setLand(Player.Land.Plains);
             }
 		});
 	}
