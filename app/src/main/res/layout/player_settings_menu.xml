@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:visibility="gone"
+              android:id="@+id/playerSettingsMenu">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:bottomRightRadius="@dimen/medium_radius"
+        android:bottomLeftRadius="@dimen/medium_radius"
+        android:topRightRadius="@dimen/medium_radius"
+        android:topLeftRadius="@dimen/medium_radius"
+        android:background="@drawable/player_settings_background">
+
+        <Button
+            android:layout_width="@dimen/medium_diameter"
+            android:layout_height="@dimen/medium_diameter"
+            android:id="@+id/plains_icon"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/icon_w"/>
+
+        <Button
+            android:layout_width="@dimen/medium_diameter"
+            android:layout_height="@dimen/medium_diameter"
+            android:id="@+id/forest_icon"
+            android:layout_alignTop="@+id/plains_icon"
+            android:layout_toEndOf="@+id/plains_icon"
+            android:background="@drawable/icon_g"
+            android:layout_marginLeft="@dimen/medium_padding"/>
+
+        <Button
+            android:layout_width="@dimen/medium_diameter"
+            android:layout_height="@dimen/medium_diameter"
+            android:id="@+id/island_icon"
+            android:layout_alignTop="@+id/forest_icon"
+            android:layout_toEndOf="@+id/forest_icon"
+            android:background="@drawable/icon_u"
+            android:layout_marginLeft="@dimen/medium_padding"/>
+
+        <Button
+            android:layout_width="@dimen/medium_diameter"
+            android:layout_height="@dimen/medium_diameter"
+            android:id="@+id/mountain_icon"
+            android:layout_below="@+id/plains_icon"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/icon_r"
+            android:layout_marginTop="@dimen/medium_padding"/>
+
+        <Button
+            android:layout_width="@dimen/medium_diameter"
+            android:layout_height="@dimen/medium_diameter"
+            android:id="@+id/swamp_icon"
+            android:layout_alignTop="@+id/mountain_icon"
+            android:layout_toEndOf="@+id/plains_icon"
+            android:background="@drawable/icon_b"
+            android:layout_marginLeft="@dimen/medium_padding"/>
+    </RelativeLayout>
+</LinearLayout>
