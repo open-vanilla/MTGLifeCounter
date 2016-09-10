@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     android:tag="@string/player_tag"
     android:layout_weight="6.75"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:paddingTop="20dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
     android:background="@drawable/background_swamp_repeating">
 
     <FrameLayout
