@@ -7,7 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Random;
 
 import vanilla.mtg.ui.PlayerLayout;
 
@@ -19,11 +21,7 @@ public class MainActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 
-		Log.d("MainActivity", "BALH");
-
 		setContentView(R.layout.activity_main);
-
-		final Context self = this;
 
 		runOnUiThread(new Runnable()
 		{
@@ -32,13 +30,9 @@ public class MainActivity extends Activity
 			{
 				ViewGroup main = (ViewGroup) getWindow().getDecorView().findViewById(R.id.main);
 
-				Log.d("MainActivity", "View " + main);
-
 				ViewQuery query = new ViewQuery(main);
 
 				ArrayList<View> players = query.findByTag("player");
-
-				Log.d("MainActivity", "Found " + players.size() + " players");
 
 				int rotationSegment = 360 / players.size();
 
@@ -51,10 +45,12 @@ public class MainActivity extends Activity
 					player.setRotation(rotationAmount);
 				}
 
+				Random random = new Random();
+
                 PlayerLayout p1 = (PlayerLayout) players.get(0);
-                p1.setLand(PlayerLayout.Land.MOUNTAIN);
+                p1.setLand(PlayerLayout.Land.values()[random.nextInt(PlayerLayout.Land.values().length)]);
 				PlayerLayout p2 = (PlayerLayout) players.get(1);
-                p2.setLand(PlayerLayout.Land.PLAINS);
+                p2.setLand(PlayerLayout.Land.values()[random.nextInt(PlayerLayout.Land.values().length)]);
             }
 		});
 	}

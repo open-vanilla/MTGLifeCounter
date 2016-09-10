@@ -22,26 +22,18 @@ public class ViewQuery
 	public ArrayList<View> findByTag(Object tag)
 	{
 		ArrayList<View> views = new ArrayList<View>();
-		Log.d("ViewQuery", "Finding...");
 
 		for (int i = 0; i < group.getChildCount(); i++)
 		{
 			View child = group.getChildAt(i);
-			Log.d("ViewQuery", "Child: " + child);
-
 			if(child instanceof ViewGroup)
 			{
-				Log.d("ViewQuery", "ViewGroup: " + child);
-
 				ViewQuery query = new ViewQuery((ViewGroup) child);
 				views.addAll(query.findByTag(tag));
 			}
 
-			Log.d("ViewQuery", "Tag: " + child.getTag());
-
 			if(Objects.equals(tag, child.getTag()))
 			{
-				Log.d("ViewQuery", "Found: " + child);
 				views.add(child);
 			}
 		}

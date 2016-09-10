@@ -1,16 +1,21 @@
 package vanilla.mtg.ui;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import vanilla.mtg.R;
@@ -19,7 +24,7 @@ import vanilla.mtg.models.Player;
 /**
  * Created by Atem on 9/9/2016.
  */
-public class PlayerLayout extends FrameLayout
+public class PlayerLayout extends RelativeLayout
 {
 	private Player player;
 
@@ -77,21 +82,18 @@ public class PlayerLayout extends FrameLayout
 			@Override
 			public void onClick(View v)
 			{
-				RotateAnimation ra = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-				ra.setFillAfter(true);
-				ra.setDuration(500);
+				RotateAnimation ra;
 
 				//TODO: move this into a settings menu view type as a toggle method
 				if(settingsMenu.getVisibility() == View.GONE)
 				{
-					settingsMenu.setVisibility(View.VISIBLE);
+					showSettingsMenu();
 				}
 				else
 				{
-					settingsMenu.setVisibility(View.GONE);
+					hideSettingsMenu();
 				}
 
-				settings.startAnimation(ra);
 			}
 		});
 
@@ -106,6 +108,50 @@ public class PlayerLayout extends FrameLayout
 		settingsMenu.findViewById(R.id.swamp_icon).setOnClickListener(new BackgroundChangeListener(Land.SWAMP));
 
 		this.update(this.player);
+	}
+
+	public void showSettingsMenu()
+	{
+		if(settingsMenu.getVisibility() == View.GONE)
+		{
+			RotateAnimation ra = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+			ra.setFillAfter(true);
+			ra.setDuration(500);
+			settings.startAnimation(ra);
+
+			settingsMenu.setVisibility(View.VISIBLE);
+			Animation fadeInAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.fadein);
+			settingsMenu.startAnimation(fadeInAnimation);
+		}
+	}
+
+	public void hideSettingsMenu()
+	{
+		if(settingsMenu.getVisibility() == View.VISIBLE)
+		{
+			RotateAnimation ra = new RotateAnimation(360f, 0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+			ra.setFillAfter(true);
+			ra.setDuration(500);
+			settings.startAnimation(ra);
+
+			Animation fadeOutAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.fadeout);
+			settingsMenu.startAnimation(fadeOutAnimation);
+			settingsMenu.setVisibility(View.GONE);
+		}
+	}
+
+	public boolean dispatchTouchEvent(MotionEvent e)
+	{
+		super.dispatchTouchEvent(e);
+		Rect viewRect = new Rect();
+		settingsMenu.getGlobalVisibleRect(viewRect);
+		Rect buttonRect = new Rect();
+		settings.getGlobalVisibleRect(buttonRect);
+		if (!viewRect.contains((int) e.getRawX(), (int) e.getRawY()) &&
+			!buttonRect.contains((int) e.getRawX(), (int) e.getRawY())) {
+			hideSettingsMenu();
+		}
+		return true;
 	}
 
 	public int resolveColor(int resourceId)
@@ -205,7 +251,7 @@ public class PlayerLayout extends FrameLayout
 		@Override
 		public void onClick(View v)
 		{
-			settingsMenu.setVisibility(View.GONE);
+			hideSettingsMenu();
 			setLand(land);
 		}
 	}

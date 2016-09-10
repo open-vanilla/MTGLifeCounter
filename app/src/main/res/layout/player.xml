@@ -10,59 +10,69 @@
     android:paddingTop="20dp"
     android:background="@drawable/background_swamp_repeating">
 
-    <Button
-        android:layout_width="@dimen/medium_diameter"
-        android:layout_height="@dimen/medium_diameter"
-        android:width="@dimen/medium_diameter"
-        android:height="@dimen/medium_diameter"
-        android:background="@drawable/round_button"
-        android:id="@+id/lifeDec"
-        android:gravity="center"
-        android:layout_gravity="left|center_vertical"
-        android:text="\u2212"
-        android:textAlignment="gravity"
-        android:textSize="50sp"
-        android:includeFontPadding="false"
-        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|top">
 
-    <TextView
-        android:layout_width="227dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/lifeCounter"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_weight="8"
-        android:textSize="130sp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp" />
+        <Button
+            android:layout_width="@dimen/medium_diameter"
+            android:layout_height="@dimen/medium_diameter"
+            android:width="@dimen/medium_diameter"
+            android:height="@dimen/medium_diameter"
+            android:background="@drawable/round_button"
+            android:id="@+id/lifeDec"
+            android:gravity="center"
+            android:layout_gravity="left|center_vertical"
+            android:text="\u2212"
+            android:textAlignment="gravity"
+            android:textSize="50sp"
+            android:includeFontPadding="false"
+            />
 
-    <Button
-        android:layout_width="@dimen/medium_diameter"
-        android:layout_height="@dimen/medium_diameter"
-        android:width="@dimen/medium_diameter"
-        android:height="@dimen/medium_diameter"
-        android:background="@drawable/round_button"
-        android:id="@+id/lifeInc"
-        android:gravity="center"
-        android:layout_gravity="right|center_vertical"
-        android:text="\u002B"
-        android:textAlignment="gravity"
-        android:textSize="50sp"
-        android:includeFontPadding="false"/>
+        <TextView
+            android:layout_width="227dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/lifeCounter"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="8"
+            android:textSize="130sp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" />
 
-    <Button
-        android:layout_width="51dp"
-        android:layout_height="51dp"
-        android:layout_gravity="left|top"
-        android:background="@drawable/player_settings"
-        android:id="@+id/settings"
-        />
+        <Button
+            android:layout_width="@dimen/medium_diameter"
+            android:layout_height="@dimen/medium_diameter"
+            android:width="@dimen/medium_diameter"
+            android:height="@dimen/medium_diameter"
+            android:background="@drawable/round_button"
+            android:id="@+id/lifeInc"
+            android:gravity="center"
+            android:layout_gravity="right|center_vertical"
+            android:text="\u002B"
+            android:textAlignment="gravity"
+            android:textSize="50sp"
+            android:includeFontPadding="false"/>
+
+        <Button
+            android:layout_width="51dp"
+            android:layout_height="51dp"
+            android:layout_gravity="left|top"
+            android:background="@drawable/player_settings"
+            android:id="@+id/settings"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            />
+
+    </FrameLayout>
 
     <include
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         layout="@layout/player_settings_menu"
-        android:layout_gravity="center_horizontal|top"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"/>
 
 </vanilla.mtg.ui.PlayerLayout>
