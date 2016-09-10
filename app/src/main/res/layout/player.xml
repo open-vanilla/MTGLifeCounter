@@ -13,7 +13,9 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal|top">
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <Button
             android:layout_width="@dimen/medium_diameter"
@@ -55,24 +57,27 @@
             android:textAlignment="gravity"
             android:textSize="50sp"
             android:includeFontPadding="false"/>
-
-        <Button
-            android:layout_width="51dp"
-            android:layout_height="51dp"
-            android:layout_gravity="left|top"
-            android:background="@drawable/player_settings"
-            android:id="@+id/settings"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            />
-
     </FrameLayout>
+
+
+    <Button
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_gravity="left|top"
+        android:background="@drawable/player_settings"
+        android:id="@+id/settings"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        />
 
     <include
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         layout="@layout/player_settings_menu"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"/>
+        android:layout_toRightOf="@+id/settings"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"/>
 
 </vanilla.mtg.ui.PlayerLayout>
