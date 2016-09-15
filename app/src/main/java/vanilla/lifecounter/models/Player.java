@@ -1,4 +1,4 @@
-package vanilla.mtg.models;
+package vanilla.lifecounter.models;
 
 /**
  * Created by Atem on 9/6/2016.

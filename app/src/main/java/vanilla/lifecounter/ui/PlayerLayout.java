@@ -1,4 +1,4 @@
-package vanilla.mtg.ui;
+package vanilla.lifecounter.ui;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -6,20 +6,18 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import vanilla.mtg.R;
-import vanilla.mtg.models.Player;
+import vanilla.lifecounter.R;
+import vanilla.lifecounter.models.Player;
 
 /**
  * Created by Atem on 9/9/2016.
@@ -106,6 +104,7 @@ public class PlayerLayout extends RelativeLayout
 		settingsMenu.findViewById(R.id.island_icon).setOnClickListener(new BackgroundChangeListener(Land.ISLAND));
 		settingsMenu.findViewById(R.id.forest_icon).setOnClickListener(new BackgroundChangeListener(Land.FOREST));
 		settingsMenu.findViewById(R.id.swamp_icon).setOnClickListener(new BackgroundChangeListener(Land.SWAMP));
+		settingsMenu.findViewById(R.id.colorless_icon).setOnClickListener(new BackgroundChangeListener(Land.COLORLESS));
 
 		this.update(this.player);
 	}
@@ -164,7 +163,7 @@ public class PlayerLayout extends RelativeLayout
 		this.setBackground(ContextCompat.getDrawable(this.getContext(), landResource.background));
 
 		int resourceId = R.color.light_controls;
-		if(landResource == Land.PLAINS)
+		if(landResource == Land.PLAINS || landResource == Land.COLORLESS)
 		{
 			resourceId = R.color.dark_controls;
 		}
@@ -212,7 +211,8 @@ public class PlayerLayout extends RelativeLayout
 		ISLAND(R.drawable.background_island_repeating),
 		PLAINS(R.drawable.background_plains_repeating),
 		SWAMP(R.drawable.background_swamp_repeating),
-		MOUNTAIN(R.drawable.background_mountain_repeating);
+		MOUNTAIN(R.drawable.background_mountain_repeating),
+		COLORLESS(R.drawable.background_colorless_repeating);
 
 		private int background;
 

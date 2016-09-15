@@ -59,5 +59,14 @@
             android:layout_toEndOf="@+id/plains_icon"
             android:background="@drawable/icon_b"
             android:layout_marginLeft="@dimen/medium_padding"/>
+
+        <Button
+            android:layout_width="@dimen/medium_diameter"
+            android:layout_height="@dimen/medium_diameter"
+            android:id="@+id/colorless_icon"
+            android:layout_alignTop="@+id/swamp_icon"
+            android:layout_toEndOf="@+id/swamp_icon"
+            android:background="@drawable/icon_c"
+            android:layout_marginLeft="@dimen/medium_padding"/>
     </RelativeLayout>
 </LinearLayout>

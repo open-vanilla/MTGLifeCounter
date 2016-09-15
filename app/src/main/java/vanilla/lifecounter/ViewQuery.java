@@ -1,6 +1,5 @@
-package vanilla.mtg;
+package vanilla.lifecounter;
 
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 

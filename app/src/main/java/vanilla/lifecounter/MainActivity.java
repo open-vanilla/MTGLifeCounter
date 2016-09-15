@@ -1,17 +1,14 @@
-package vanilla.mtg;
+package vanilla.lifecounter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Random;
 
-import vanilla.mtg.ui.PlayerLayout;
+import vanilla.lifecounter.ui.PlayerLayout;
 
 public class MainActivity extends Activity
 {
